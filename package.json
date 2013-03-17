@@ -1,0 +1,15 @@
+{
+  
+  "name": "nodecopter_qr",
+  "version": "0.1.0",
+  "dependencies": {
+
+    "ar-drone": "*",
+    "ar-drone-png-stream": "*",
+    "qrar": "*",
+    "express": "*",
+    "now": "*"
+    
+  }
+
+}

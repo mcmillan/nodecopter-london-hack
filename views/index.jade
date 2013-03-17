@@ -1,0 +1,102 @@
+!!!
+html
+
+  head
+
+    title Ahoy!
+
+    link(rel='stylesheet', href='bootstrap.min.css')
+
+  body
+
+    .container
+
+      h1.page-header NodeQRopter
+
+      a.btn.btn-success(href='#', onclick='now.takeOff(); return false;') Take Off
+      |  
+      a.btn.btn-danger.pull-right(href='#', onclick='now.land(); return false;') Land
+
+      br
+      br
+
+      img(src='//localhost:8000')
+
+    script(src='mousetrap.min.js')
+    script(src='/nowjs/now.js')
+    script
+
+      Mousetrap.bind('t', function() {
+
+        now.takeOff();
+
+      });
+
+      Mousetrap.bind('l', function() {
+
+        now.land();
+
+      });
+
+      Mousetrap.bind('w', function() {
+
+        now.front();
+
+      }, 'keydown');
+
+      Mousetrap.bind('s', function() {
+
+        now.back();
+
+      }, 'keydown');
+
+      Mousetrap.bind('a', function() {
+
+        now.left();
+
+      }, 'keydown');
+
+      Mousetrap.bind('d', function() {
+
+        now.right();
+
+      }, 'keydown');
+
+      Mousetrap.bind('up', function() {
+
+        now.up();
+
+      });
+
+      Mousetrap.bind('down', function() {
+
+        now.down();
+
+      });
+
+      Mousetrap.bind('right', function() {
+
+        now.clockwise();
+
+      });
+
+      Mousetrap.bind('left', function() {
+
+        now.anticlockwise();
+
+      });
+
+      stop = function() {
+
+        now.stop();
+
+      };
+
+      Mousetrap.bind('w', stop, 'keyup');
+      Mousetrap.bind('a', stop, 'keyup');
+      Mousetrap.bind('s', stop, 'keyup');
+      Mousetrap.bind('d', stop, 'keyup');
+      Mousetrap.bind('up', stop, 'keyup');
+      Mousetrap.bind('down', stop, 'keyup');
+      Mousetrap.bind('left', stop, 'keyup');
+      Mousetrap.bind('right', stop, 'keyup');
